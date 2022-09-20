@@ -4,47 +4,52 @@ function getComputerChoice(max) {
     return rPSArray[Math.floor(Math.random() * 3)];
   }
   
-  // console.log(getComputerChoice());
-  
-
-
-
 function playRound(playerSelection, computerSelection) {
-    
+  
     if 
     (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Scissors') {
-        return "You win! Rock beats scissors!";
+        return "playerPoint";
 
     } else if
-      (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'Paper'){
-        return "You win! Scissors beats paper!";
+      (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'Paper') {
+        return "playerPoint";
       
     } else if 
       (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Rock') {
-          return "You win! Paper beats rock!";
+          return "playerPoint";
 
     } else if
       (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Paper') {
-        return "You lose! Paper beats rock!"
+        return "computerPoint";
       
     } else if
       (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Scissors') {
-        return "You lose! Scissors beats paper!"
+        return "computerPoint";
 
     } else if 
       (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'Rock') {
-        return "You lose! Rocks beats scissors!"
+        return "computerPoint";
     
-    } else {
-        return "It's a tie!"
-      }
-}
+    } else if 
+      (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+        return "It's a tie!";
 
-function game(playRound) {}
+    } else {
+        return "You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson"
+        }
+      }
+
+function game(playRound) {
+
+}
 
 const playerSelection = prompt();
 const computerSelection = getComputerChoice(3);
 
+const playerPoint = playRound(playerSelection, computerSelection)=="playerPoint"
+const computerPoint  =playRound(playerSelection, computerSelection)=="computerPoint"
+
+
 console.log(playRound(playerSelection, computerSelection));
-console.log("Computer plays: "+computerSelection)
-console.log("Human plays: "+playerSelection)
+console.log("Computer plays: "+computerSelection);
+console.log("Human plays: "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
