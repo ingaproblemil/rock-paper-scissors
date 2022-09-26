@@ -15,11 +15,13 @@ function getComputerChoice(max) {
       let computerSelection = getComputerChoice(3);
 
       playRound(playerSelection, computerSelection)
+      
 
       console.log("Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
       console.log("Computer played "+computerSelection)
       }
   
+      
 
 
 function playRound(playerSelection, computerSelection) {
@@ -64,18 +66,27 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
         roundsPlayed++;
         return counter();
-    } else if
-    (roundsPlayed >= 5 && playerScore > computerScore) {
-      alert("Game Over! - Player WON!")
 
-    } else if 
-    (roundsPlayed >= 5 && playerScore < computerScore) {
-      alert("Game Over! - Computer WON!")
     } else {
         return prompt("You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson")
         
       }
+}
+
+endGame()
+
+function endGame () {
+    if (roundsPlayed = 5 && playerScore > computerScore) {
+      alert("You WON!")
     }
+    else if (roundsPlayed = 5 && playerScore < computerScore) {
+      alert("You LOST!")
+    }
+    else if (roundsPlayed = 5) {
+      alert ("I guess it's a tie?")
+    }
+}
+    
 
 function counter() {
 
@@ -85,6 +96,5 @@ function counter() {
 }
 
 
-let playerSelection = prompt("Make your pick: Rock, Paper or Scissors!");
-let computerSelection = getComputerChoice(3);
-
+// let playerSelection = prompt("Make your pick: Rock, Paper or Scissors!");
+// let computerSelection = getComputerChoice()
