@@ -8,17 +8,23 @@ function getComputerChoice(max) {
   let computerScore = 0;
   let roundsPlayed = 0;
 
-  for (let i = 0; i <= 5; i++) {
-    let playerSelection = prompt("Make a pick: Rock, Paper or Scissors!");
-    let computerSelection = getComputerChoice(3);
 
-    playRound(playerSelection, computerSelection) 
+  // Här kommer loopen 
+  for (let i = 1; i <= 5; i++) {
+      let playerSelection = prompt("Make a pick: Rock, Paper or Scissors!");
+      let computerSelection = getComputerChoice(3);
 
+      playRound(playerSelection, computerSelection)
+
+      console.log("Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
+      console.log("Computer played "+computerSelection)
       }
+  
+
 
 function playRound(playerSelection, computerSelection) {
 
-    if 
+    if  
     (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Scissors') {
       playerScore++;
       roundsPlayed++;
@@ -52,13 +58,19 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'Rock') {
         computerScore++;
         roundsPlayed++;
-        return counter();
+      return counter();
     
     } else if 
       (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
         roundsPlayed++;
         return counter();
+    } else if
+    (roundsPlayed >= 5 && playerScore > computerScore) {
+      alert("Game Over! - Player WON!")
 
+    } else if 
+    (roundsPlayed >= 5 && playerScore < computerScore) {
+      alert("Game Over! - Computer WON!")
     } else {
         return prompt("You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson")
         
@@ -76,5 +88,3 @@ function counter() {
 let playerSelection = prompt("Make your pick: Rock, Paper or Scissors!");
 let computerSelection = getComputerChoice(3);
 
-console.log("Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
-console.log("Computer played "+computerSelection)
