@@ -8,13 +8,20 @@ function getComputerChoice(max) {
   let computerScore = 0;
   let roundsPlayed = 0;
 
+  for (let i = 0; i <= 5; i++) {
+    let playerSelection = prompt("Make a pick: Rock, Paper or Scissors!");
+    let computerSelection = getComputerChoice(3);
+
+    playRound(playerSelection, computerSelection) 
+
+      }
+
 function playRound(playerSelection, computerSelection) {
- 
-  
+
     if 
     (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Scissors') {
       playerScore++;
-      roundsPlayed++;  
+      roundsPlayed++;
       return counter();
 
     } else if
@@ -27,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection.toLowerCase() == 'paper' && computerSelection == 'Rock') {
         playerScore++;
         roundsPlayed++;
-          return counter();
+        return counter();
 
     } else if
       (playerSelection.toLowerCase() == 'rock' && computerSelection == 'Paper') {
@@ -53,30 +60,21 @@ function playRound(playerSelection, computerSelection) {
         return counter();
 
     } else {
-        return "You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson"
-        }
-       
+        return prompt("You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson")
+        
       }
+    }
 
 function counter() {
 
       console.log("Player: "+playerScore)
       console.log("Computer: "+computerScore) 
       console.log("Rounds played: "+roundsPlayed)
-}      
+}
 
 
-const playerSelection = prompt("Make your pick: Rock, Paper or Scissors!");
-const computerSelection = getComputerChoice(3);
+let playerSelection = prompt("Make your pick: Rock, Paper or Scissors!");
+let computerSelection = getComputerChoice(3);
 
-// let playerPoint = playRound(playerSelection, computerSelection)=="playerPoint";
-// let computerPoint = playRound(playerSelection, computerSelection)=="computerPoint";
-
-let round = playRound(playerSelection, computerSelection);
-
-
-
-
-// console.log(playRound(playerSelection, computerSelection));
-console.log("Computer plays: "+computerSelection);
-console.log("Human plays: "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
+console.log("Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
+console.log("Computer played "+computerSelection)
