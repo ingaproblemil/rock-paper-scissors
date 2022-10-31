@@ -1,27 +1,30 @@
+
+// Array of Rock paper and Scissors
 const rPSArray = ["Rock", "Paper", "Scissors"] 
 
+//Random computer choice
 function getComputerChoice(max) {
     return rPSArray[Math.floor(Math.random() * 3)];
   }
+
+
+let playerScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
   
-  let playerScore = 0;
-  let computerScore = 0;
-  let roundsPlayed = 0;
+const buttons = document.querySelectorAll('button');
 
-
-  // Här kommer loopen 
-  for (let i = 1; i <= 5; i++) {
-      let playerSelection = prompt("Make a pick: Rock, Paper or Scissors!");
-      let computerSelection = getComputerChoice(3);
-
-      playRound(playerSelection, computerSelection)
-      
-
-      console.log("Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
-      console.log("Computer played "+computerSelection)
-      }
-  
-      
+buttons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    let playerSelection = btn.textContent;
+    let computerSelection = getComputerChoice(3);
+    
+    playRound(playerSelection, computerSelection);
+          
+    console.log("Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase());
+    console.log("Computer played "+computerSelection)
+        });
+      });      
 
 
 function playRound(playerSelection, computerSelection) {
@@ -68,24 +71,24 @@ function playRound(playerSelection, computerSelection) {
         return counter();
 
     } else {
-        return prompt("You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson")
+        alert("You must enter Rock, Paper or Scissors din dumma lilla Ulf Kristersson")
         
       }
 }
 
-endGame()
+// endGame()
 
-function endGame () {
-    if (roundsPlayed = 5 && playerScore > computerScore) {
-      alert("You WON!")
-    }
-    else if (roundsPlayed = 5 && playerScore < computerScore) {
-      alert("You LOST!")
-    }
-    else if (roundsPlayed = 5) {
-      alert ("I guess it's a tie?")
-    }
-}
+// // function endGame () {
+// //     if (roundsPlayed = 5 && playerScore > computerScore) {
+// //       alert("You WON!")
+// //     }
+// //     else if (roundsPlayed = 5 && playerScore < computerScore) {
+// //       alert("You LOST!")
+// //     }
+// //     else if (roundsPlayed = 5) {
+// //       alert ("I guess it's a tie?")
+// //     }
+// // }
     
 
 function counter() {
