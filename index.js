@@ -26,17 +26,20 @@ buttons.forEach((btn) => {
     let humanPlayed = "Human played "+playerSelection.substr(0, 1).toUpperCase()+playerSelection.substr(1).toLowerCase();
     let computerPlayed = "Computer played "+computerSelection
 
-    counter()
+    let playerResult = "Human score: "+playerScore;
+    let computerResult = "Computer score: "+computerScore;
+    let rounds = "Rounds played: "+roundsPlayed;
 
-    let playerPoint = counter.playerResult;
-    let computerPoint = counter.computerResult;
-    let round = counter.rounds;
+
+    // let playerPoint = counter.playerResult;
+    // let computerPoint = counter.computerResult;
+    // let round = counter.rounds;
 
     document.getElementById("result1").textContent = humanPlayed;
     document.getElementById("result2").textContent = computerPlayed;
-    document.getElementById("result3").textContent = playerPoint;
-    document.getElementById("result4").textContent = computerPoint;
-    document.getElementById("result5").textContent = round;
+    document.getElementById("result3").textContent = playerResult;
+    document.getElementById("result4").textContent = computerResult;
+    document.getElementById("result5").textContent = rounds;
 
 
         });
@@ -94,17 +97,17 @@ function playRound(playerSelection, computerSelection) {
       }
 }
 
-function counter() {
-  let playerResult = "Player: "+playerScore,
-      computerResult = "Computer: "+computerScore,
-      rounds = "Rounds played: "+roundsPlayed;
+// function counter() {
+//   let playerResult = "Player: "+playerScore,
+//       computerResult = "Computer: "+computerScore,
+//       rounds = "Rounds played: "+roundsPlayed;
   
-  return {
-  'playerResult': playerResult, 
-  'computerResult': computerResult, 
-  'rounds': rounds
-  };
-}
+//   return {
+//   'playerResult': playerResult, 
+//   'computerResult': computerResult, 
+//   'rounds': rounds
+//   };
+// }
 
 // endGame()
 

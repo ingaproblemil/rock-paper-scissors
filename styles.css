@@ -1,12 +1,47 @@
-.button-container {
-
-    display: flex
+body {
+    /* background-color: coral; */
+    background-image: url("pexels-cottonbro-4659806.jpg");
+    /* height: 1080px; */
+    display: flex;
+    flex: 1, 1;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    flex-direction: column;
+    
+    justify-self: flex-start;
+
+    border: 5px, solid, black;
+}
+
+.button-container {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+button {
+    
+    font-size: larger;
+    background-color: rgba(245, 245, 245, 0.308);
+    color: black;
+    border-radius: 10%;
+    width: 100px;
+    height: 50px;
 }
 
 #results-container {
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(245, 245, 245, 0.308);
+    width: 800px;
 }
