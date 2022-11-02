@@ -8,7 +8,7 @@ body {
     justify-content: center;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    
+
 }
 
 .header {
@@ -31,7 +31,7 @@ body {
 }
 
 button {
-    
+
     font-size: larger;
     background-color: rgba(245, 245, 245, 0.308);
     color: whitesmoke;
@@ -64,4 +64,17 @@ button {
     color: whitesmoke;
     border-radius: 20px;
     font-size: xx-large;
+    height: 105px;
+}
+
+#endGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.restartBtn {
+    margin-top: 50px;
 }

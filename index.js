@@ -14,7 +14,7 @@ let roundsPlayed = 0;
 
 
   
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('button.gameBtn');
 
 buttons.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -38,20 +38,17 @@ buttons.forEach((btn) => {
 
     if (roundsPlayed == 5 && playerScore > computerScore) {
       document.getElementById("endGame").textContent = "You WON!";
-      return;
+      
     } else if (roundsPlayed == 5 && playerScore < computerScore) {
       document.getElementById("endGame").textContent = "Computer WON!";
-      return;
+      
     } else if (roundsPlayed == 5 && playerScore == computerScore) {
       document.getElementById("endGame").textContent = "TIE";
-      return;
+      
     }
 
         });
-      });     
-
-      
-
+      });           
 
 function playRound(playerSelection, computerSelection) {
 
@@ -101,3 +98,22 @@ function playRound(playerSelection, computerSelection) {
         
       }
 }
+
+// Restart function
+
+function restart() {
+  window.location.reload();
+}
+
+const restartClick = document.querySelectorAll('button.restartBtn');
+
+restartClick.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    window.location.reload();})
+
+  });
+
+
+
+
+
